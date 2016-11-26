@@ -1,0 +1,16 @@
+{
+ "scripts": {
+  "start": "browser-sync start --server src --files src/*.js",
+  "build": "babel src -d dist",
+  "deploy": "npm run build; cp src/index.html dist/200.html; cp -r src/sounds/ dist/sounds/; surge dist noism.surge.sh"
+ },
+ "dependencies": {
+  "audio-mixer": "heliosdesign/helios-audio-mixer",
+  "heliosAudioMixer": "heliosdesign/helios-frame-runner",
+  "tween.js": "^16.3.5"
+ },
+ "devDependencies": {
+  "babel-cli": "^6.18.0",
+  "babel-preset-es2015": "^6.18.0"
+ }
+}
